@@ -9,6 +9,7 @@ type Props = {
   userAnswer: AnswerState | undefined;
   questionNo: number;
   totalQuestions: number;
+  score: number;
 };
 
 const QuestionCard: React.FC<Props> = ({
@@ -18,21 +19,24 @@ const QuestionCard: React.FC<Props> = ({
   userAnswer,
   questionNo,
   totalQuestions,
+  score,
 }) => {
   return (
     <>
       <div>
-          <p className="q_number">Total Questions: {totalQuestions}</p>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-            }}
-          >
-            <h6>Question {questionNo}.</h6>
-            <p dangerouslySetInnerHTML={{ __html: question }} />
-          </div>
+        <h2>Quiz by TypeScript</h2>
+        <p className="q_number">Total Questions: {totalQuestions}</p>
+        <p className="score">Score: {score}</p>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+          }}
+        >
+          <h6>Question {questionNo}.</h6>
+          <p dangerouslySetInnerHTML={{ __html: question }} />
+        </div>
         <div
           style={{
             display: "flex",

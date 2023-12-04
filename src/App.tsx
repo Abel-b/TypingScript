@@ -5,6 +5,7 @@ import "./App.css";
 import QuestionCard from "./components/QuestionCard";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
+import TodoList from "./components/TodoList";
 import { Button } from "react-bootstrap";
 //types
 import { QuestionState, AnswerState, difficulty } from "./com/API";
@@ -62,78 +63,82 @@ const App = () => {
   return (
     <div className="App" style={{ width: "100%" }}>
       <NavBar />
-      <div className="quizContianer">
-        <h2>Quiz by TypeScript</h2>
-        {endQuiz || userAnswers.length == TOTAL_QUESTIONS ? (
+      <div style={{ display: "flex", flexDirection: 'row', alignItems: 'center', justifyContent: "space-around" }}>
+        <div className="todoContainer">
+          <TodoList />
+        </div>
+        <div className="quizContianer">
+          {endQuiz || userAnswers.length == TOTAL_QUESTIONS ? (
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <label htmlFor="difficulty">Choose Difficulty</label>
+              <select name="difficulty" id="difficulty">
+                <option value={difficulty.EASY}>Easy</option>
+                <option value={difficulty.MEDIUM}>Medium</option>
+                <option value={difficulty.HARD}>Hard</option>
+              </select>
+              <Button
+                style={{ marginTop: 10 }}
+                variant="success"
+                className="startBtn"
+                onClick={startQuiz}
+              >
+                Start
+              </Button>
+            </div>
+          ) : null}
           <div
             style={{
               display: "flex",
-              flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
             }}
           >
-            <label htmlFor="difficulty">Choose Difficulty</label>
-            <select name="difficulty" id="difficulty">
-              <option value={difficulty.EASY}>Easy</option>
-              <option value={difficulty.MEDIUM}>Medium</option>
-              <option value={difficulty.HARD}>Hard</option>
-            </select>
-            <Button
-              style={{ marginTop: 10 }}
-              variant="success"
-              className="startBtn"
-              onClick={startQuiz}
-            >
-              Start
-            </Button>
+            {loading ? <p> Loading Questions, please wait... </p> : null}
+            {!loading && !endQuiz && userAnswers.length !== TOTAL_QUESTIONS ? (
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <QuestionCard
+                  questionNo={number + 1}
+                  totalQuestions={TOTAL_QUESTIONS}
+                  question={questions[number].question}
+                  answers={questions[number].answers}
+                  userAnswer={userAnswers ? userAnswers[number] : undefined}
+                  callback={checkAnswer}
+                  score={score}
+                />
+              </div>
+            ) : null}
           </div>
-        ) : null}
-        {!endQuiz ? <p className="score">Score: {score}</p> : null}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          {loading ? <p> Loading Questions, please wait... </p> : null}
-          {!loading && !endQuiz && userAnswers.length !== TOTAL_QUESTIONS ? (
-            <div style={{ display: "flex", justifyContent: "center" }}>
-              <QuestionCard
-                questionNo={number + 1}
-                totalQuestions={TOTAL_QUESTIONS}
-                question={questions[number].question}
-                answers={questions[number].answers}
-                userAnswer={userAnswers ? userAnswers[number] : undefined}
-                callback={checkAnswer}
-              />
-            </div>
-          ) : null}
-        </div>
-        <div>
-          {!endQuiz &&
-          !loading &&
-          userAnswers.length == number + 1 &&
-          number !== TOTAL_QUESTIONS - 1 ? (
-            <>
-              <Button className="nextBtn" onClick={nextQuestion}>
-                Next
+          <div>
+            {!endQuiz &&
+            !loading &&
+            userAnswers.length == number + 1 &&
+            number !== TOTAL_QUESTIONS - 1 ? (
+              <>
+                <Button className="nextBtn" onClick={nextQuestion}>
+                  Next
+                </Button>
+              </>
+            ) : null}
+            {!endQuiz && !loading ? (
+              <Button
+                style={{ marginLeft: 5 }}
+                variant="danger"
+                className="nextBtn"
+                onClick={() => {
+                  setEndQuiz(true);
+                }}
+              >
+                Quit
               </Button>
-            </>
-          ) : null}
-          {!endQuiz && !loading ? (
-            <Button
-              style={{ marginLeft: 5 }}
-              variant="danger"
-              className="nextBtn"
-              onClick={() => {
-                setEndQuiz(true);
-              }}
-            >
-              Quit
-            </Button>
-          ) : null}
+            ) : null}
+          </div>
         </div>
       </div>
       <Footer />
