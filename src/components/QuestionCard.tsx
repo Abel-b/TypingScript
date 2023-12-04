@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Alert } from "react-bootstrap";
+import { Button, Badge } from "react-bootstrap";
 import { ButtonWrapper } from "./QuestionCard.styles";
 import { AnswerState } from "../com/API";
 type Props = {
@@ -24,9 +24,9 @@ const QuestionCard: React.FC<Props> = ({
   return (
     <>
       <div>
-        <h2>Quiz by TypeScript</h2>
         <p className="q_number">Total Questions: {totalQuestions}</p>
-        <p className="score">Score: {score}</p>
+        <p className="score">Score:  <Badge>{score}</Badge> </p>
+       
         <div
           style={{
             display: "flex",
@@ -52,6 +52,7 @@ const QuestionCard: React.FC<Props> = ({
                 userClicked={userAnswer?.answer === answer}
               >
                 <Button
+                size="lg"
                   variant={
                     userAnswer?.correctAnswer === answer
                       ? "success"
