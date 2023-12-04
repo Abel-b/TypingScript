@@ -61,7 +61,7 @@ const App = () => {
   };
 
   return (
-    <div className="App" style={{ width: "100%", height: "10%" }}>
+    <div className="App" style={{ width: "100%" }}>
       <NavBar />
       <div
         style={{
@@ -71,11 +71,18 @@ const App = () => {
           justifyContent: "space-around",
         }}
       >
-        <div className="todoContainer" style={{ width: "40%" }}>
-          <h2>Todo App</h2>
+        <div className="todoContainer" style={{ width: "40%"}}>
           <TodoList />
         </div>
-        <div className="quizContianer" style={{ width: "40%" }}>
+        <div
+          className="quizContianer"
+          style={{
+            width: "40%",
+            borderRadius: 10,
+            backgroundColor: "#f2f2f2",
+            minHeight: "500px",
+          }}
+        >
           <h2>Quiz Me?</h2>
           {endQuiz || userAnswers.length == TOTAL_QUESTIONS ? (
             <div

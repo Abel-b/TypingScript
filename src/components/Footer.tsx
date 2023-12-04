@@ -12,16 +12,16 @@ const Footer: React.FC = () => {
         <p>&copy; 2023 QuizMe</p>
         <div className="social-icons">
           <a href="https://www.linkedin.com/in/abel-w-berhane/" target="_blank" rel="noopener noreferrer">
-            <FaLinkedin />
+            <FaLinkedin size={25} />
           </a>
           <a href="https://github.com/Abel-b" target="_blank" rel="noopener noreferrer">
-            <FaGithub />
+            <FaGithub size={25} />
           </a>
           <a href="https://abel-b.github.io/Portfolio/" target="_blank" rel="noopener noreferrer">
-            <TbWorldWww />
+            <TbWorldWww size={25} />
           </a>
           <a href="https://medium.com/@abel-berhane-wm" target="_blank" rel="noopener noreferrer">
-            <FaMedium />
+            <FaMedium size={25} />
           </a>
         </div>
       </div>
