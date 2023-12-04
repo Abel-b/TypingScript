@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Abel-b/QuizMe/static/css/main.57117d07.css",
-    "main.js": "/Abel-b/QuizMe/static/js/main.42971a61.js",
-    "static/js/787.936a2710.chunk.js": "/Abel-b/QuizMe/static/js/787.936a2710.chunk.js",
-    "index.html": "/Abel-b/QuizMe/index.html",
-    "main.57117d07.css.map": "/Abel-b/QuizMe/static/css/main.57117d07.css.map",
-    "main.42971a61.js.map": "/Abel-b/QuizMe/static/js/main.42971a61.js.map",
-    "787.936a2710.chunk.js.map": "/Abel-b/QuizMe/static/js/787.936a2710.chunk.js.map"
+    "main.css": "/QuizMe/static/css/main.57117d07.css",
+    "main.js": "/QuizMe/static/js/main.55ae71e6.js",
+    "static/js/787.936a2710.chunk.js": "/QuizMe/static/js/787.936a2710.chunk.js",
+    "index.html": "/QuizMe/index.html",
+    "main.57117d07.css.map": "/QuizMe/static/css/main.57117d07.css.map",
+    "main.55ae71e6.js.map": "/QuizMe/static/js/main.55ae71e6.js.map",
+    "787.936a2710.chunk.js.map": "/QuizMe/static/js/787.936a2710.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.57117d07.css",
-    "static/js/main.42971a61.js"
+    "static/js/main.55ae71e6.js"
   ]
 }
