@@ -107,7 +107,9 @@ const TodoList: React.FC = () => {
         }}
       >
         Progress:{countCompleted()}/{todoItems.length}
-        {countCompleted() === todoItems.length ? "\n🎊You're Amazing at doing your job!🎊" : ""}
+        {countCompleted() === todoItems.length && todoItems.length !== 0
+          ? "\n🎊You're Amazing at doing your job!🎊"
+          : ""}
       </p>
     </div>
   );
