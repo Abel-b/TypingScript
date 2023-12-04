@@ -1,6 +1,7 @@
 {
   "name": "quiz_me",
   "version": "0.1.0",
+  "homepage": "https://abel-b.github.io/QuizMe/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -20,6 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -46,6 +48,7 @@
     "@types/bootstrap": "^5.2.10",
     "@types/react-bootstrap": "^0.32.35",
     "bootstrap": "^5.3.2",
+    "gh-pages": "^6.1.0",
     "react-bootstrap": "^2.9.1"
   }
 }

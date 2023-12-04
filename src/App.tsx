@@ -79,7 +79,12 @@ const App = () => {
               <option value={difficulty.MEDIUM}>Medium</option>
               <option value={difficulty.HARD}>Hard</option>
             </select>
-            <Button style={{ marginTop: 10}} variant="success" className="startBtn" onClick={startQuiz}>
+            <Button
+              style={{ marginTop: 10 }}
+              variant="success"
+              className="startBtn"
+              onClick={startQuiz}
+            >
               Start
             </Button>
           </div>
@@ -115,16 +120,19 @@ const App = () => {
               <Button className="nextBtn" onClick={nextQuestion}>
                 Next
               </Button>
-              <Button
-                variant="danger"
-                className="nextBtn"
-                onClick={() => {
-                  setEndQuiz(true);
-                }}
-              >
-                Quit
-              </Button>
             </>
+          ) : null}
+          {!endQuiz && !loading ? (
+            <Button
+              style={{ marginLeft: 5 }}
+              variant="danger"
+              className="nextBtn"
+              onClick={() => {
+                setEndQuiz(true);
+              }}
+            >
+              Quit
+            </Button>
           ) : null}
         </div>
       </div>
