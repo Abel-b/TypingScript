@@ -3,6 +3,8 @@ import { fetchQuizQuestions } from "./com/API";
 import "./App.css";
 //components
 import QuestionCard from "./components/QuestionCard";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 import { Button } from "react-bootstrap";
 //types
 import { QuestionState, AnswerState, difficulty } from "./com/API";
@@ -59,8 +61,9 @@ const App = () => {
 
   return (
     <div className="App" style={{ width: "100%" }}>
+      <NavBar />
       <div className="quizContianer">
-        <h2>Quiz by Typescript</h2>
+        <h2>Quiz by TypeScript</h2>
         {endQuiz || userAnswers.length == TOTAL_QUESTIONS ? (
           <div
             style={{
@@ -76,25 +79,33 @@ const App = () => {
               <option value={difficulty.MEDIUM}>Medium</option>
               <option value={difficulty.HARD}>Hard</option>
             </select>
-            <Button variant="success" className="startBtn" onClick={startQuiz}>
+            <Button style={{ marginTop: 10}} variant="success" className="startBtn" onClick={startQuiz}>
               Start
             </Button>
           </div>
         ) : null}
-        {!endQuiz ? <p className="score">Score: {score} / {TOTAL_QUESTIONS}</p> : null}
-        {loading ? <p> Loading Questions, please wait... </p> : null}
-        {!loading && !endQuiz && userAnswers.length !== TOTAL_QUESTIONS ? (
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <QuestionCard
-              questionNo={number + 1}
-              totalQuestions={TOTAL_QUESTIONS}
-              question={questions[number].question}
-              answers={questions[number].answers}
-              userAnswer={userAnswers ? userAnswers[number] : undefined}
-              callback={checkAnswer}
-            />
-          </div>
-        ) : null}
+        {!endQuiz ? <p className="score">Score: {score}</p> : null}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          {loading ? <p> Loading Questions, please wait... </p> : null}
+          {!loading && !endQuiz && userAnswers.length !== TOTAL_QUESTIONS ? (
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <QuestionCard
+                questionNo={number + 1}
+                totalQuestions={TOTAL_QUESTIONS}
+                question={questions[number].question}
+                answers={questions[number].answers}
+                userAnswer={userAnswers ? userAnswers[number] : undefined}
+                callback={checkAnswer}
+              />
+            </div>
+          ) : null}
+        </div>
         <div>
           {!endQuiz &&
           !loading &&
@@ -104,13 +115,20 @@ const App = () => {
               <Button className="nextBtn" onClick={nextQuestion}>
                 Next
               </Button>
-              <Button variant="danger" className="nextBtn" onClick={nextQuestion}>
+              <Button
+                variant="danger"
+                className="nextBtn"
+                onClick={() => {
+                  setEndQuiz(true);
+                }}
+              >
                 Quit
               </Button>
             </>
           ) : null}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

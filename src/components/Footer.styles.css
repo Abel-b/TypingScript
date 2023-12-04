@@ -1,0 +1,22 @@
+.footer {
+    background-color: #44dbb5;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .social-icons a {
+    margin-left: 0.5rem;
+  }
+  
+
+  

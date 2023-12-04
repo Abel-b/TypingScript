@@ -1,4 +1,6 @@
 import React from "react";
+import { Button, Alert } from "react-bootstrap";
+import { ButtonWrapper } from "./QuestionCard.styles";
 import { AnswerState } from "../com/API";
 type Props = {
   question: string;
@@ -20,11 +22,17 @@ const QuestionCard: React.FC<Props> = ({
   return (
     <>
       <div>
-        Question Card
-        <p className="q_number">
-          Question: {questionNo} / {totalQuestions}
-        </p>
-        <p dangerouslySetInnerHTML={{ __html: question }} />
+          <p className="q_number">Total Questions: {totalQuestions}</p>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+            }}
+          >
+            <h6>Question {questionNo}.</h6>
+            <p dangerouslySetInnerHTML={{ __html: question }} />
+          </div>
         <div
           style={{
             display: "flex",
@@ -34,9 +42,27 @@ const QuestionCard: React.FC<Props> = ({
         >
           {answers.map((answer, i) => (
             <div key={i}>
-              <button disabled={!!userAnswer} value={answer} onClick={callback}>
-                <span dangerouslySetInnerHTML={{ __html: answer }} />
-              </button>
+              <ButtonWrapper
+                key={answer}
+                correct={userAnswer?.correctAnswer === answer}
+                userClicked={userAnswer?.answer === answer}
+              >
+                <Button
+                  variant={
+                    userAnswer?.correctAnswer === answer
+                      ? "success"
+                      : !(userAnswer?.correctAnswer === answer) &&
+                        userAnswer?.answer === answer
+                      ? "danger"
+                      : "info"
+                  }
+                  disabled={!!userAnswer}
+                  value={answer}
+                  onClick={callback}
+                >
+                  <span dangerouslySetInnerHTML={{ __html: answer }} />
+                </Button>
+              </ButtonWrapper>
             </div>
           ))}
         </div>
