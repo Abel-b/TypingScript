@@ -61,7 +61,7 @@ const App = () => {
   };
 
   return (
-    <div className="App" style={{ width: "100%" }}>
+    <div className="App" style={{ width: "100%", height: "100%" }}>
       <NavBar />
       <div
         style={{
@@ -69,18 +69,30 @@ const App = () => {
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "space-around",
+          flexWrap: "wrap",
+          marginBottom: 100,
         }}
       >
-        <div className="todoContainer" style={{ width: "40%"}}>
+        <div
+          className="todoContainer"
+          style={{
+            minWidth: "400px",
+            padding: 7,
+            maxWidth: "400px",
+            marginLeft: 10,
+          }}
+        >
           <TodoList />
         </div>
         <div
           className="quizContianer"
           style={{
-            width: "40%",
+            width: "400px",
             borderRadius: 10,
             backgroundColor: "#f2f2f2",
             minHeight: "500px",
+            padding: 7,
+            marginLeft: 10,
           }}
         >
           <h2>Quiz Me?</h2>
@@ -118,7 +130,13 @@ const App = () => {
           >
             {loading ? <p> Loading Questions, please wait... </p> : null}
             {!loading && !endQuiz ? (
-              <div style={{ display: "flex", justifyContent: "center" }}>
+              <div
+                style={{
+                  display: "flex",
+                  padding: 7,
+                  justifyContent: "center",
+                }}
+              >
                 <QuestionCard
                   questionNo={number + 1}
                   totalQuestions={TOTAL_QUESTIONS}

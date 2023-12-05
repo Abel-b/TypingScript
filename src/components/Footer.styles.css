@@ -1,5 +1,5 @@
 .footer {
-  background-color: rgb(54, 207, 209);
+  background-color: rgb(54, 111, 209);
   color: rgb(255, 255, 255);
   padding: 1rem;
   text-align: center;
@@ -15,5 +15,6 @@
 }
 
 .social-icons a {
-  margin-left: 1.0rem;
+  margin-left: 1rem;
+  color: aqua;
 }
