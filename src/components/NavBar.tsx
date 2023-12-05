@@ -5,7 +5,7 @@ const NavBar: React.FC = () => {
   return (
     <nav className="navbar">
       <h3 className="logo">Typing Script</h3>
-      <ul className="nav-links">
+      {/* <ul className="nav-links">
         <li>
           <a href="#">Home</a>
         </li>
@@ -18,7 +18,7 @@ const NavBar: React.FC = () => {
         <li>
           <a href="#">Contact</a>
         </li>
-      </ul>
+      </ul> */}
     </nav>
   );
 };

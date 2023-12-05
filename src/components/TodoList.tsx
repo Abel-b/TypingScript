@@ -70,7 +70,7 @@ const TodoList: React.FC = () => {
             alignItems: "center",
           }}
         >
-          <h2>iTodo App</h2>
+          <h2>iTodo</h2>
           <header style={{ display: "flex", alignItems: "center" }}>
             <Image
               src={todoLandingImg}
