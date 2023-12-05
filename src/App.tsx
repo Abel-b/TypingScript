@@ -6,11 +6,11 @@ import QuestionCard from "./components/QuestionCard";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import TodoList from "./components/TodoList";
-import { Button } from "react-bootstrap";
+import { Button, Image } from "react-bootstrap";
 //types
 import { QuestionState, AnswerState, difficulty } from "./com/API";
 //images
-import bgImage from "./images/backdrop.png";
+import bgImageQuiz from "./images/quiz_landing_time.jpg";
 const TOTAL_QUESTIONS = 10;
 
 const App = () => {
@@ -79,7 +79,6 @@ const App = () => {
             minWidth: "400px",
             padding: 7,
             maxWidth: "400px",
-            marginLeft: 10,
           }}
         >
           <TodoList />
@@ -92,10 +91,9 @@ const App = () => {
             backgroundColor: "#f2f2f2",
             minHeight: "500px",
             padding: 7,
-            marginLeft: 10,
           }}
         >
-          <h2>Quiz Me?</h2>
+          <Image thumbnail src={bgImageQuiz} />
           {endQuiz || userAnswers.length == TOTAL_QUESTIONS ? (
             <div
               style={{
