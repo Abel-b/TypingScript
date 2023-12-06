@@ -26,6 +26,7 @@ const TodoList: React.FC = () => {
         createdAt: new Date().toLocaleTimeString(),
       };
       setTodoItems([...todoItems, newItem]);
+      setNewTask("");
     } else {
       alert("write some task description.");
     }
@@ -211,6 +212,7 @@ const TodoList: React.FC = () => {
               placeholder="Add a task here..."
               aria-label="Recipient's username"
               aria-describedby="basic-addon2"
+              value={newTask}
               onChange={(e) => {
                 setNewTask(e.target.value);
               }}
