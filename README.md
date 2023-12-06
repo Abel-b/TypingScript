@@ -1,4 +1,7 @@
-# Getting Started with Create React App
+# Typing Script
+It is a single-page web app designed to track tasks and learn interactively by taking a fun quiz.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
