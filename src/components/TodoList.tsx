@@ -205,7 +205,7 @@ const TodoList: React.FC = () => {
               ))}
           </div>
         </ul>
-        <div style={{ position: "absolute", bottom: 0, width: "80%" }}>
+        <div style={{ position: "absolute", bottom: 0, width: "95%" }}>
           <InputGroup className="mb-3" style={{ display: "flex" }}>
             <Form.Control
               placeholder="Add a task here..."
