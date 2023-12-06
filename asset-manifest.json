@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/TypingScript/static/css/main.3958dab1.css",
-    "main.js": "/TypingScript/static/js/main.6fc2e0d7.js",
+    "main.js": "/TypingScript/static/js/main.0c8d71b7.js",
     "static/js/787.936a2710.chunk.js": "/TypingScript/static/js/787.936a2710.chunk.js",
     "static/media/todo_landing_2.jpg": "/TypingScript/static/media/todo_landing_2.c717d72172be8a693b36.jpg",
     "static/media/quiz_landing_time.jpg": "/TypingScript/static/media/quiz_landing_time.4521d5558d41920d8fe6.jpg",
     "static/media/todo_landing_nothing.jpg": "/TypingScript/static/media/todo_landing_nothing.0e2d4b9cbfb54dfce86f.jpg",
     "index.html": "/TypingScript/index.html",
     "main.3958dab1.css.map": "/TypingScript/static/css/main.3958dab1.css.map",
-    "main.6fc2e0d7.js.map": "/TypingScript/static/js/main.6fc2e0d7.js.map",
+    "main.0c8d71b7.js.map": "/TypingScript/static/js/main.0c8d71b7.js.map",
     "787.936a2710.chunk.js.map": "/TypingScript/static/js/787.936a2710.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3958dab1.css",
-    "static/js/main.6fc2e0d7.js"
+    "static/js/main.0c8d71b7.js"
   ]
 }
