@@ -206,39 +206,35 @@ const TodoList: React.FC = () => {
               ))}
           </div>
         </ul>
-        <div style={{ position: "absolute", bottom: 0, width: "95%" }}>
-          <InputGroup className="mb-3" style={{ display: "flex" }}>
-            <Form.Control
-              placeholder="Add a task here..."
-              aria-label="Recipient's username"
-              aria-describedby="basic-addon2"
-              value={newTask}
-              onChange={(e) => {
-                setNewTask(e.target.value);
-              }}
-            />
-            <Button
-              variant="info"
-              style={{ borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }}
-              onClick={handleAdd}
-            >
-              Add
-            </Button>
-          </InputGroup>
-          <h4
-            style={{
-              color: "#777",
-              fontSize: "1.3rem",
-              fontStyle: "italic",
-              textAlign: "center",
+        <InputGroup className="mb-3" style={{ display: "flex" }}>
+          <Form.Control
+            placeholder="Add a task here..."
+            value={newTask}
+            onChange={(e) => {
+              setNewTask(e.target.value);
             }}
+          />
+          <Button
+            variant="info"
+            style={{ borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }}
+            onClick={handleAdd}
           >
-            Progress:{countCompleted()}/{todoItems.length}
-            {countCompleted() === todoItems.length && todoItems.length !== 0
-              ? "\n🎊You're Amazing at doing your job!🎊"
-              : ""}
-          </h4>
-        </div>
+            Add
+          </Button>
+        </InputGroup>
+        <h4
+          style={{
+            color: "#777",
+            fontSize: "1.3rem",
+            fontStyle: "italic",
+            textAlign: "center",
+          }}
+        >
+          Progress:{countCompleted()}/{todoItems.length}
+          {countCompleted() === todoItems.length && todoItems.length !== 0
+            ? "\n🎊You're Amazing at doing your job!🎊"
+            : ""}
+        </h4>
       </div>
     </div>
   );
